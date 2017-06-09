@@ -1,2 +1,3 @@
 # GetFinancialSeries.jl
-{**not yet**} use online resources to retrieve financial time series
+>>> **{as yet, not yet}**
+use online resources to retrieve financial time series
