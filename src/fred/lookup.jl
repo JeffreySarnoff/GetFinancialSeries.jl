@@ -1,3 +1,5 @@
+using Base.Dates
+
 const FredKeyTerms = [(:Nominal, :Real, :Spot), 
                       (:ConstantMaturity, (:Nominal, :Real), (:Day, :Week, :Month)),
                       (:Forward, (:InstantRate, :TermPremium), (:Day,)),
@@ -17,6 +19,7 @@ const FredKeyTerms = [(:Nominal, :Real, :Spot),
         (:CrudeOil => (:WestTexas[:USD], :Brent[:USD]) ),
         (:NaturalGas => :USD) )
 """
+
 const FredTreasuryRates = Dict([
   :ConstantMaturity => Dict([
     :Nominal => Dict([
@@ -89,7 +92,7 @@ const FredTreasuryRates = Dict([
                       Year(10) => "THREEFYTP10", Year(9) => "THREEFYTP9",  Year(8) => "THREEFYTP8",  Year(7) => "THREEFYTP7",
                       Year(6) => "THREEFYTP6",  Year(5) => "THREEFYTP5",  Year(4) => "THREEFYTP4",  Year(3) => "THREEFYTP3",
                       Year(2) => "THREEFYTP2", Year(1) => "THREEFYTP1" ]),
-             ]),+
+             ]),
      ]),           # :ZeroCoupon
      
   ]); # FredTreasuryRates
