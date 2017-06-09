@@ -1,5 +1,5 @@
 const FredKeyTerms = [(:Nominal, :Real, :Spot), 
-                      (:ConstantMaturity, (:Nominal, :Real), (:Day, :Week, :Month))),
+                      (:ConstantMaturity, (:Nominal, :Real), (:Day, :Week, :Month)),
                       (:Forward, (:InstantRate, :TermPremium), (:Day,)),
                       (:BreakevenInflation, (:InstantRate, :TermPremium), (:Day, :Month)),
                       (:ZeroCoupon, (:InstantRate, :InstantYield), (:Day)) ]
