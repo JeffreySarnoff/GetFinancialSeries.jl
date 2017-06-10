@@ -1,10 +1,14 @@
 module GetFinancialSeries
 
-export fred, google, quandl #, yahoo
+export fred, truefx, google, quandl #, yahoo
 
 include("fred/lookup.jl")
 include("fred/request.jl")
 include("fred/update.jl")
+
+include("truefx/lookup.jl")
+include("truefx/request.jl")
+include("truefx/update.jl")
 
 include("google/lookup.jl")
 include("google/request.jl")
