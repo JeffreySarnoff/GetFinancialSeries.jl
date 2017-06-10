@@ -1,5 +1,7 @@
 module GetFinancialSeries
 
+using Requests
+
 export fred, truefx, google, quandl #, yahoo
 
 include("fred/lookup.jl")
