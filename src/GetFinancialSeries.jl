@@ -6,6 +6,7 @@ include("fred/lookup.jl")
 include("fred/request.jl")
 include("fred/update.jl")
 
+include("truefx/authorization.jl")
 include("truefx/lookup.jl")
 include("truefx/request.jl")
 include("truefx/update.jl")
