@@ -24,24 +24,20 @@ const truefx_authorization_url = string(truefx_authentication_url,"&q=",TrueFX_q
 function sessionid(::Type{TrueFX}; force::Bool=false)
     if force || length(ENV["TrueFX_sessionid"]) == 0
         response = Requests.get(truefx_authorization_url)
-        got = chomp(readstring(response))
-        verify_authorization(TrueFX, got)
-        newsessionid = split(got, string(TrueFX_qualifier,":")[2]
+        newsessionid = chomp(readstring(response))
+        verify_authorization(TrueFX, newsessionid, response.status)
         ENV["TrueFX_sessionid"] = newsessionid
     end
     return ENV["TrueFX_sessionid"]
 end
    
-function verify_authorization(::Type{TrueFX}, obtained::String)
-    if got === "not authorized"
+function verify_authorization(::Type{TrueFX}, obtained::String, status::Int)
+    if status != 200
+        throw(ErrorException("TrueFX did not process the authorization: status error."))      
+    end  
+    if obtained === "not authorized"
         throw(ErrorException("TrueFX did not authorize the username and password given"))
     end
 end
   
 
-
-function request(::Type{TrueFX}, uri::String)
-    response = Requests.get(truefx_authqualified_url)
-if !response.status == 200
-    throw(ErrorException("There was either authorization exce
-http://webrates.truefx.com/rates/connect.html?u=jsarnoff&p=truefx4jas&q=eurates
